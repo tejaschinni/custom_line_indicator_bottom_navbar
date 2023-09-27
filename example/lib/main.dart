@@ -61,21 +61,21 @@ class _MyExampleState extends State<MyExample> {
         customBottomBarItems: [
           CustomBottomBarItems(
             label: 'Home',
-            icon: Icons.home,
+            icon: Icon(Icons.home),
           ),
           CustomBottomBarItems(
             label: 'Account',
-            icon: Icons.account_box_outlined,
+            icon: Icon(Icons.account_box_outlined),
           ),
           CustomBottomBarItems(
-              label: 'Leaves', icon: Icons.calendar_today_outlined),
+              label: 'Leaves', icon: Icon(Icons.calendar_today_outlined)),
           CustomBottomBarItems(
             label: 'Loyalty',
-            icon: Icons.card_giftcard_rounded,
+            icon: Icon(Icons.card_giftcard_rounded),
           ),
           CustomBottomBarItems(
             label: 'Requests',
-            icon: Icons.list,
+            icon: Icon(Icons.list),
           ),
         ],
       ),

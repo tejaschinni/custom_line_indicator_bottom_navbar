@@ -81,7 +81,7 @@ class CustomLineIndicatorBottomNavbar extends StatelessWidget {
 }
 
 class CustomBottomBarItems {
-  final IconData icon;
+  final Widget icon;
   final String label;
 
   CustomBottomBarItems({
@@ -91,7 +91,7 @@ class CustomBottomBarItems {
 }
 
 class CustomLineIndicatorBottomNavbarItems extends StatelessWidget {
-  final IconData? icon;
+  final Widget? icon;
   final String? label;
   final Color? selectedColor;
   final Color? unSelectedColor;
@@ -171,15 +171,16 @@ class CustomLineIndicatorBottomNavbarItems extends StatelessWidget {
               // height: 60,
               child: Column(
                 children: [
-                  Icon(
-                    icon,
-                    size: currentIndex == index
-                        ? selectedIconSize
-                        : unselectedIconSize,
-                    color: currentIndex == index
-                        ? selectedColor ?? bottomTheme.unselectedItemColor
-                        : unSelectedColor,
-                  ),
+                  icon!,
+                  // c(
+                  //   icon,
+                  //   size: currentIndex == index
+                  //       ? selectedIconSize
+                  //       : unselectedIconSize,
+                  //   color: currentIndex == index
+                  //       ? selectedColor ?? bottomTheme.unselectedItemColor
+                  //       : unSelectedColor,
+                  // ),
                   SizedBox(
                     height: 5.0,
                   ),
