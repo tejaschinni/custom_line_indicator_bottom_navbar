@@ -1,6 +1,7 @@
 library custom_line_indicator_bottom_navbar;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 enum IndicatorType { Top, Bottom }
 
@@ -57,7 +58,7 @@ class CustomLineIndicatorBottomNavbar extends StatelessWidget {
                 child: CustomLineIndicatorBottomNavbarItems(
                   selectedColor: selectedColor,
                   unSelectedColor: unSelectedColor,
-                  icon: customBottomBarItems[i].icon,
+                  icon: customBottomBarItems[i].icon.toString(),
                   label: customBottomBarItems[i].label,
                   unSelectedFontSize: unselectedFontSize,
                   selectedFontSize: selectedFontSize,
@@ -81,7 +82,7 @@ class CustomLineIndicatorBottomNavbar extends StatelessWidget {
 }
 
 class CustomBottomBarItems {
-  final Widget icon;
+  final String? icon;
   final String label;
 
   CustomBottomBarItems({
@@ -91,7 +92,7 @@ class CustomBottomBarItems {
 }
 
 class CustomLineIndicatorBottomNavbarItems extends StatelessWidget {
-  final Widget? icon;
+  final String? icon;
   final String? label;
   final Color? selectedColor;
   final Color? unSelectedColor;
@@ -171,8 +172,17 @@ class CustomLineIndicatorBottomNavbarItems extends StatelessWidget {
               // height: 60,
               child: Column(
                 children: [
-                  icon!,
-                  // c(
+                  SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: SvgPicture.asset(
+                      icon.toString(),
+                      color: currentIndex == index
+                          ? selectedColor ?? bottomTheme.unselectedItemColor
+                          : unSelectedColor,
+                    ),
+                  ),
+                  // Icon(
                   //   icon,
                   //   size: currentIndex == index
                   //       ? selectedIconSize
